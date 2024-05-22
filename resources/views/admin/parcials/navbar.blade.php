@@ -6,11 +6,12 @@
          <input class="form-control mr-sm-2 bg-transparent border-0 pl-4 text-muted" type="search"
              placeholder="Type something..." aria-label="Search">
      </form>
+     @php
+         $local = LaravelLocalization::getCurrentLocale()== 'ar' ? 'en' : 'ar' ;
+     @endphp
      <ul class="nav">
          <li class="nav-item">
-             <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
-                 <i class="fe fe-sun fe-16"></i>
-             </a>
+            @include('admin.parcials.langauge')
          </li>
          <li class="nav-item">
              <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
